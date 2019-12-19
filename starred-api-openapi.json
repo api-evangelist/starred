@@ -1,0 +1,437 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Starred API",
+        "description": "![Starred API][starred-api-intro]\n\nStarred provides REST APIs to help our clients automate feedback process. With Starred API, organizations can send survey invites, generate survey links or get the summary of survey forms. Starred Webhook allows your to subscribe to feedback notifications in real time with feedback data.\n\nThe easiest way to start using the Starred API is by clicking the Run in Postman button above. Postman is a free tool which helps developers run and debug API requests. Every endpoint you see documented here is readily available by running our Postman collection.\n\n## TLS 1.0 Deprecated\nStarred has deprecated support for Transport Layer Security (TLS) 1.0 because of the security issues. This means we only support Transport Layer Security (TLS) 1.1 and TLS 1.2\n\nIf your programming language requires you to define security protocol then please use TLS 1.1 or above.\n\n## Need help?\nThe Starred team is always around to answer your questions. Send your questions to [api@star",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsexample.com\/"
+    ],
+    "paths": {
+        "\/InvitationLinks\/anonymous": {
+            "post": {
+                "summary": "Anonymous Invitation Link",
+                "description": "Generate a link to a Starred survey form of your choice. \nGenerate from 1 up to, and including 100 anonymous links. (Anonymous is for when the recipient's email is not known)\n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `fromUserEmail` | Required | Email address of the sender |\n| `amount` | Optional | Amount of invitation links desired. (Defaults to 1) |\n| `tags` | Optional | Any number",
+                "operationId": "InvitationLinksAnonymousPost",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/": {
+            "post": {
+                "summary": "Webhook v1.0",
+                "description": "Webhook v1.0 is our standard webhook response. This version will be deprecated soon. We highly recommend migrating to Webhook v1.1\n\nPlease get in touch with our support to migrate your account to Webhook v1.1",
+                "operationId": "UnnammedEndpointPost2",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/InvitationLinks\/single": {
+            "post": {
+                "summary": "Single Invitation Link",
+                "description": "It is possible to generate a link to a Starred survey form of your choice. \n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `fromUserEmail` | Required | Email address of the sender |\n| `recipient` | Required | Email address of the recipient |\n| `firstName` | Optional | First name to address the recipient with |\n| `lastName` | Optional | Surname to address the recipient with |\n| `tags` | Op",
+                "operationId": "InvitationLinksSinglePost",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/sendinvitations\/csv": {
+            "post": {
+                "summary": "Send Invitation CSV",
+                "description": "With the \/sendinvitations call you can link your CRM system to Starred so invitations are sent automatically. This will no longer require any manual action. \n\nYou can also import additional characteristics directly from your CRM so you can start analyzing results for different client groups. \n\nThe parameters on the right are mandatory to make the request succeed.\n\n### Request Parameters\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that",
+                "operationId": "SendinvitationsCsvPost",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/InvitationLinks\/csv": {
+            "post": {
+                "summary": "Invitation Link CSV",
+                "description": "Generate links for users from a CSV file.\n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `fromUserEmail` | Required | Email address of the sender |\n| `file` | Required | A CSV file formatted as a regular invitation CSV added as a HTTP POST file. |",
+                "operationId": "InvitationLinksCsvPost",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/sendinvitations": {
+            "post": {
+                "summary": "Send Single Invitation",
+                "description": "Instead of uploading a CSV file, you can also set one recipient per API call by using the following parameters to the URL.\n\n### Request Parameters\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `from` | Required | Email address of the sender, must be a registered email |\n| `recipient` | Required | Email address of the recipient |\n| `firstName` | Required | First name to address the recipient with |\n| `lastName` ",
+                "operationId": "SendinvitationsPost",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/segment\/summary": {
+            "get": {
+                "summary": "Dashboard Summary",
+                "description": "Retrieve segment summary from your account. This summary includes your NPS score and detailed breakdown.\n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `segment` | Optional | Group ID to get summary data for (defaults to 0) |\n\nNote: Segment is an alias for Groups in Starred Platform. You can retrieve Segment ID on Groups page in Starred Platform. [Groups in Starred](https:\/\/app.starred.co",
+                "operationId": "SegmentSummaryGet",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AnonymousInvitationLinkresponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "WebhookV1.1response": {
+                "type": "object",
+                "properties": {
+                    "formId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ratingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "emailAddress": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elements": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "companyId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "dateInvitationSent": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "dateResponseRecieved": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "responseUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "properties": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Element": {
+                "type": "object",
+                "properties": {
+                    "elementId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elementTitle": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elementType": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elementData": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ElementDatum": {
+                "type": "object",
+                "properties": {
+                    "questionId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "response": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "responseComment": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Property": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "SingleInvitationLinkresponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "SendInvitationCsvresponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "WebhookV1.0response": {
+                "type": "object",
+                "properties": {
+                    "formId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ratingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "emailAddress": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elements": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Element8": {
+                "type": "object",
+                "properties": {
+                    "Location ": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Organisation ": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Content ": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Program ": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "How likely is it that you will recommend us to a friend or colleague?": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "What should we do differently to get a 9 or 10?": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Your general feedback on us": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "How much effort did you personally have to put forth to handle your request?": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "How could we have made it easier for you?": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "InvitationLinkCsvresponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "SendSingleInvitationresponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "DashboardSummaryresponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elements": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Segment": {
+                "type": "object",
+                "properties": {
+                    "segmentId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Form": {
+                "type": "object",
+                "properties": {
+                    "formId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ratingCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uniqueUserRatingCount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Element14": {
+                "type": "object",
+                "properties": {
+                    "elementId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elementNumber": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elementTitle": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "elementType": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "npsQuestion": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "generalQuestion": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rating": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "promoterCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passiveCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "detractorCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "promoterPercent": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passivePercent": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "detractorPercent": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "npsScore": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cesQuestion": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Question1": {
+                "type": "object",
+                "properties": {
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rating": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "count": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
