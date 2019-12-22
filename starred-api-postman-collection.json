@@ -1,5 +1,5 @@
 {
-    "id": "8c15c59ef3decbd18ae669fc17e2def4",
+    "id": "2a3667c6fbee4e3b1bdba38c0ff7675f",
     "name": "Starred API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "8d526ddd256e0040bb55adcdbda01914",
+            "id": "ef2a2341c0de17ffc4d66160a258e944",
             "name": "Anonymous Invitation Link",
             "url": "httpsexample.com\/\/InvitationLinks\/anonymous",
             "description": "Generate a link to a Starred survey form of your choice. \nGenerate from 1 up to, and including 100 anonymous links. (Anonymous is for when the recipient's email is not known)\n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `fromUserEmail` | Required | Email address of the sender |\n| `amount` | Optional | Amount of invitation links desired. (Defaults to 1) |\n| `tags` | Optional | Any number",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         },
         {
-            "id": "d7ef09d2b32b4bd261e040c4b7a9facb",
+            "id": "1881b553399c738e856304840e8f7b86",
             "name": "Webhook v1.0",
             "url": "httpsexample.com\/\/",
             "description": "Webhook v1.0 is our standard webhook response. This version will be deprecated soon. We highly recommend migrating to Webhook v1.1\n\nPlease get in touch with our support to migrate your account to Webhook v1.1",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         },
         {
-            "id": "90e30f3af019464043fafd3029204426",
+            "id": "14e8bf16435cacbe289a263c4175374c",
             "name": "Single Invitation Link",
             "url": "httpsexample.com\/\/InvitationLinks\/single",
             "description": "It is possible to generate a link to a Starred survey form of your choice. \n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `fromUserEmail` | Required | Email address of the sender |\n| `recipient` | Required | Email address of the recipient |\n| `firstName` | Optional | First name to address the recipient with |\n| `lastName` | Optional | Surname to address the recipient with |\n| `tags` | Op",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         },
         {
-            "id": "88dc508b099d1ce2cd33e9cbeadc315f",
+            "id": "673f911a42082e644641eabbabf17605",
             "name": "Send Invitation CSV",
             "url": "httpsexample.com\/\/sendinvitations\/csv",
             "description": "With the \/sendinvitations call you can link your CRM system to Starred so invitations are sent automatically. This will no longer require any manual action. \n\nYou can also import additional characteristics directly from your CRM so you can start analyzing results for different client groups. \n\nThe parameters on the right are mandatory to make the request succeed.\n\n### Request Parameters\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         },
         {
-            "id": "0e75b155175f46f9f458be0476a01332",
+            "id": "69a6b65aa507107607da29d143820d93",
             "name": "Invitation Link CSV",
             "url": "httpsexample.com\/\/InvitationLinks\/csv",
             "description": "Generate links for users from a CSV file.\n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `fromUserEmail` | Required | Email address of the sender |\n| `file` | Required | A CSV file formatted as a regular invitation CSV added as a HTTP POST file. |",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         },
         {
-            "id": "8cee6887e3e900bec159ad482c0f9412",
+            "id": "cd03ac1603a4f287b26fdab9a8a84ada",
             "name": "Send Single Invitation",
             "url": "httpsexample.com\/\/sendinvitations",
             "description": "Instead of uploading a CSV file, you can also set one recipient per API call by using the following parameters to the URL.\n\n### Request Parameters\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `from` | Required | Email address of the sender, must be a registered email |\n| `recipient` | Required | Email address of the recipient |\n| `firstName` | Required | First name to address the recipient with |\n| `lastName` ",
@@ -144,11 +144,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         },
         {
-            "id": "cf5c510955b9b1c2a8a6ca3d3eb941e1",
+            "id": "2cfd97e0c49e47c2f5626abb26ceff5e",
             "name": "Dashboard Summary",
             "url": "httpsexample.com\/\/segment\/summary",
             "description": "Retrieve segment summary from your account. This summary includes your NPS score and detailed breakdown.\n\n**Request Parameters**\n\n| Parameter | Required | Description |\n| ------ | ------ | ------ |\n| `form` | Required | ID of the form that will be sent out |\n| `segment` | Optional | Group ID to get summary data for (defaults to 0) |\n\nNote: Segment is an alias for Groups in Starred Platform. You can retrieve Segment ID on Groups page in Starred Platform. [Groups in Starred](https:\/\/app.starred.co",
@@ -167,7 +167,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8c15c59ef3decbd18ae669fc17e2def4",
+            "collectionId": "2a3667c6fbee4e3b1bdba38c0ff7675f",
             "rawModeData": ""
         }
     ]
